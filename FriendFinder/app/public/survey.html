@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>FriendFinder</title>
 
-    <!-- Latest compiled and minified CSS & JS -->
+    <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Link to Photo Image (Required)</label>
+                    <label>Link to Photo (Required)</label>
                     <input type="input" class="form-control" id="photo">
                 </div>
 
@@ -42,7 +42,7 @@
 
                 <h3>Question 1</h3>
                 <div class="form-group">
-                    <label>Your mind is always buzzing with unexplored ideas and plans.</label>
+                    <label>I often find myself wishing you where home.</label>
                     <select class="form-control" id="q1">
                         <option value=''>Select a Score</option>
                         <option value=1>1 (Strongly Disagree)</option>
@@ -55,7 +55,7 @@
 
                 <h3>Question 2</h3>
                 <div class="form-group">
-                    <label>Generally speaking, you rely more on your experience than your imagination.</label>
+                    <label>I often wish I could be exploreing the world.</label>
                     <select class="form-control" id="q2">
                         <option value=''>Select a Score</option>
                         <option value=1>1 (Strongly Disagree)</option>
@@ -68,7 +68,7 @@
 
                 <h3>Question 3</h3>
                 <div class="form-group">
-                    <label>You find it easy to stay relaxed and focused even when there is some pressure.</label>
+                    <label>Im more of a cat person.</label>
                     <select class="form-control" id="q3">
                         <option value=''>Select a Score</option>
                         <option value=1>1 (Strongly Disagree)</option>
@@ -81,7 +81,7 @@
 
                 <h3>Question 4</h3>
                 <div class="form-group">
-                    <label>You rarely do something just out of sheer curiosity.</label>
+                    <label>Im more of a dog person.</label>
                     <select class="form-control" id="q4">
                         <option value=''>Select a Score</option>
                         <option value=1>1 (Strongly Disagree)</option>
@@ -94,7 +94,7 @@
 
                 <h3>Question 5</h3>
                 <div class="form-group">
-                    <label>People can rarely upset you.</label>
+                    <label>After spending time in a large crowd I often feel that I need to socially recharge.</label>
                     <select class="form-control" id="q5">
                         <option value=''>Select a Score</option>
                         <option value=1>1 (Strongly Disagree)</option>
@@ -107,7 +107,7 @@
 
                 <h3>Question 6</h3>
                 <div class="form-group">
-                    <label>It is often difficult for you to relate to other people’s feelings.</label>
+                    <label>I enjoy being the center of attention.</label>
                     <select class="form-control" id="q6">
                         <option value=''>Select a Score</option>
                         <option value=1>1 (Strongly Disagree)</option>
@@ -121,7 +121,7 @@
 
                 <h3>Question 7</h3>
                 <div class="form-group">
-                    <label>In a discussion, truth should be more important than people’s sensitivities.</label>
+                    <label>I am tech-savy.</label>
                     <select class="form-control" id="q7">
                         <option value=''>Select a Score</option>
                         <option value=1>1 (Strongly Disagree)</option>
@@ -135,7 +135,7 @@
 
                 <h3>Question 8</h3>
                 <div class="form-group">
-                    <label>You rarely get carried away by fantasies and ideas.</label>
+                    <label>I often find myself shareing in peoples emotions.</label>
                     <select class="form-control" id="q8">
                         <option value=''>Select a Score</option>
                         <option value=1>1 (Strongly Disagree)</option>
@@ -149,8 +149,7 @@
 
                 <h3>Question 9</h3>
                 <div class="form-group">
-                    <label>You think that everyone’s views should be respected regardless of whether they are supported
-                        by facts or not.</label>
+                    <label>"I dont need friends they disappoint me " *clap and pose*.</label>
                     <select class="form-control" id="q9">
                         <option value=''>Select a Score</option>
                         <option value=1>1 (Strongly Disagree)</option>
@@ -164,7 +163,7 @@
 
                 <h3>Question 10</h3>
                 <div class="form-group">
-                    <label>You feel more energetic after spending time with a group of people.</label>
+                    <label>A persons political beleifs are not a reflection of their values.</label>
                     <select class="form-control" id="q10">
                         <option value=''>Select a Score</option>
                         <option value=1>1 (Strongly Disagree)</option>
@@ -175,7 +174,8 @@
                     </select>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary" data-toggle='modal' data-target='#results-modal' id='add-btn'>Submit</button>
+                <button type="submit" class="btn btn-dark" data-toggle='modal' data-target='#results-modal'
+                    id='add-btn'>Submit</button>
             </form>
 
         </div>
@@ -183,7 +183,7 @@
         <div class=col-lg-2></div>
 
     </div>
-
+    <!--   Rachel helped me with this -->
     <div id="results-modal" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
@@ -197,57 +197,57 @@
                 </div>
                 <div class="modal-body">
                     <h2 class='text-center' id="match-name"></h2>
-                    <div class = 'text-center' id='img-here'></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div class='text-center' id='img-here'></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
+
             </div>
-
         </div>
-    </div>
 
-    <script type='text/javascript'>
-        $("#add-btn").on("click", function (event) {
-            event.preventDefault();
-            function formCompleted() {
-                var isComplete = true;
-                $('.form-control').each(function () {
-                    if ($(this).val() === '') {
-                        isComplete = false;
-                    }
-                });
-                return isComplete;
-                console.log(isComplete);
-            }
-            if (formCompleted()) {
-                var newFriend = {
-                    name: $("#name").val(),
-                    photo: $("#photo").val(),
-                    scores: [
-                        $("#q1").val(),
-                        $("#q2").val(),
-                        $("#q3").val(),
-                        $("#q4").val(),
-                        $("#q5").val(),
-                        $("#q6").val(),
-                        $("#q7").val(),
-                        $("#q8").val(),
-                        $("#q9").val(),
-                        $("#q10").val()
-                    ]
-                };
-                $.post("/api/friends", newFriend, function (data) {
-                    $('#img-here').html("<img src='" + data.photo + "' height='250px'>")
-                    $('#match-name').text(data.name)
-                    console.log(data.name);
-                    console.log(data.photo);
-                });
-            }
-            else {
-                alert('Complete all questions to find your compatible friend.')
-            }
-        });
-    </script>
+        <script type='text/javascript'>
+            $("#add-btn").on("click", function (event) {
+                event.preventDefault();
+                function formCompleted() {
+                    var isComplete = true;
+                    $('.form-control').each(function () {
+                        if ($(this).val() === '') {
+                            isComplete = false;
+                        }
+                    });
+                    return isComplete;
+                    console.log(isComplete);
+                }
+                if (formCompleted()) {
+                    var NewFriendID = {
+                        name: $("#name").val(),
+                        photo: $("#photo").val(),
+                        scores: [
+                            $("#q1").val(),
+                            $("#q2").val(),
+                            $("#q3").val(),
+                            $("#q4").val(),
+                            $("#q5").val(),
+                            $("#q6").val(),
+                            $("#q7").val(),
+                            $("#q8").val(),
+                            $("#q9").val(),
+                            $("#q10").val()
+                        ]
+                    };
+                    $.post("/api/friends", NewFriendID, function (data) {
+                        $('#img-here').html("<img src='" + data.photo + "' height='250px'>")
+                        $('#match-name').text(data.name)
+                        console.log(data.name);
+                        console.log(data.photo);
+                    });
+                }
+                else {
+                    alert('Please fill out entire field')
+                }
+            });
+        </script>
 
 
 </body>
