@@ -2,30 +2,30 @@
 var express = require("express");
 var path = require("path");
 
-//Express App Setup//
+//Express App Setup
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-//Express App Data Parsing//
+//Express app 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//Data//
-var friends = [
+//Data
+var friendlist = [
   {
     name: 'Nick',
     photo: '',
     scores: [
       '1',
+      '4',
+      '5',
+      '3',
       '1',
       '1',
       '1',
+      '2',
       '1',
-      '1',
-      '1',
-      '1',
-      '1',
-      '1'
+      '3'
     ]
   }
 ]
@@ -45,25 +45,25 @@ app.get('/survey', function (req, res) {
 });
 
 //apis 
-//Display all friends
-app.get('/api/friends', function (req, res) {
-  return res.json(friends);
+//Display all friendlist
+app.get('/api/friendlist', function (req, res) {
+  return res.json(friendlist);
 });
 
-// new friends
-app.post("/api/friends", function (req, res) {
+// new friendlist
+app.post("/api/friendlist", function (req, res) {
   var newFriend = req.body;
   console.log(newFriend);
-  friends.push(newFriend);
+  friendlist.push(newFriend);
 
   //Compare scores
   let match;
-  let maxscore = 999;
+  let maxscore = 99;
 // had to do a for loop inside a for loop(had to look this up)
-  for (var i = 0; i < friends.length - 1; i++) {
+  for (var i = 0; i < friendlist.length - 1; i++) {
     var score = 0;
     for (var j = 0; j < 10; j++) {
-      var partialsum = Math.abs(friends[i].scores[j] - newFriend.scores[j]);
+      var partialsum = Math.abs(friendlist[i].scores[j] - newFriend.scores[j]);
       score += partialsum;
     }
     if (score < maxscore) {
@@ -71,7 +71,7 @@ app.post("/api/friends", function (req, res) {
       match = i;
     }
   }
-  res.json(friends[match]);
+  res.json(friendlist[match]);
 });
 
 
